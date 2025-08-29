@@ -1,4 +1,4 @@
-Mini Q&A Chatbot Assessment
+##Mini Q&A Chatbot Assessment
 This project is a simple, intelligent Q&A chatbot built for the Algorithm Aliens technical assessment. The chatbot is designed to answer a predefined set of questions and excels at understanding variations in user phrasing through the use of semantic similarity.
 
 ✨ Key Features
