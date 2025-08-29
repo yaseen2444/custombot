@@ -56,7 +56,7 @@ streamlit run app.py
 
 This will open a new tab in your web browser, usually at http://localhost:8501.
 
-🧠 My Approach
+##🧠 My Approach
 The core requirement of this task was to handle variations in user questions. To achieve this, I chose a Semantic Search approach over simple keyword matching. Here’s how it works:
 
 Knowledge Base: I began by defining the 15 required questions and answers in knowledge_base.py.
