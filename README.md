@@ -51,18 +51,18 @@ To start the chatbot, run the Streamlit application from your terminal:
 streamlit run app.py
 This will open a new tab in your web browser at http://localhost:8501.
 
-🧠 My Approach
-The core requirement of this task was to handle variations in user questions. To achieve this, I chose a Semantic Search approach over simple keyword matching.
+##🧠 My Approach
+#The core requirement of this task was to handle variations in user questions. To achieve this, I chose a Semantic Search approach over simple keyword matching.
 
-Knowledge Base: I began by defining the 15 required questions and answers in knowledge_base.py.
+#Knowledge Base: I began by defining the 15 required questions and answers in knowledge_base.py.
 
-Text Embeddings: I used the all-MiniLM-L6-v2 model from Hugging Face's sentence-transformers library. This powerful model converts each question in the knowledge base into a 384-dimensional numerical vector (an "embedding"). These embeddings capture the semantic meaning of the text. This is a one-time process performed when the chatbot initializes.
+#Text Embeddings: I used the all-MiniLM-L6-v2 model from Hugging Face's sentence-transformers library. This powerful model converts each question in the knowledge base into a 384-#dimensional numerical vector (an "embedding"). These embeddings capture the semantic meaning of the text. This is a one-time process performed when the chatbot initializes.
 
-Real-time Query Processing: When a user submits a question, it is also converted into an embedding using the same model.
+#Real-time Query Processing: When a user submits a question, it is also converted into an embedding using the same model.
 
-Cosine Similarity: The chatbot then calculates the cosine similarity between the user's query vector and all the pre-calculated vectors in the knowledge base. This provides a score of how "semantically close" the user's question is to each known question.
+#Cosine Similarity: The chatbot then calculates the cosine similarity between the user's query vector and all the pre-calculated vectors in the knowledge base. This provides a score of #how "semantically close" the user's question is to each known question.
 
-Thresholding for Relevance: The question with the highest similarity score is chosen as the best match. However, to handle completely unrelated questions, I implemented a threshold (e.g., 0.5). If the top score is below this threshold, the bot concludes the question is out of scope and returns a default "I don't know" response.
+#Thresholding for Relevance: The question with the highest similarity score is chosen as the best match. However, to handle completely unrelated questions, I implemented a threshold #(e.g., 0.5). If the top score is below this threshold, the bot concludes the question is out of scope and returns a default "I don't know" response.
 
 This method is highly effective and robust, ensuring the chatbot provides accurate answers even when users phrase their questions in unexpected ways.
 
